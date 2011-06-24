@@ -8,10 +8,7 @@ GEM
   specs:
     curb (0.7.15)
     diff-lcs (1.1.2)
-    english (0.6.3)
-      language
     json (1.5.3)
-    language (0.6.0)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -26,7 +23,6 @@ PLATFORMS
 
 DEPENDENCIES
   curb
-  english
   json
   rspec
   yadirect!

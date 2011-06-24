@@ -46,11 +46,7 @@ module Yadirect
     def to_hash_params *args
       return {} if args.empty?
       first_arg = args.shift
-      if first_arg.is_a?(Hash)
-        return first_arg.camelize_keys
-      else
-        return args
-      end
+      first_arg.is_a?(Hash) ? first_arg.camelize_keys : args
     end
   end
 end
