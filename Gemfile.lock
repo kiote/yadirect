@@ -1,0 +1,32 @@
+PATH
+  remote: .
+  specs:
+    yadirect (0.0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    curb (0.7.15)
+    diff-lcs (1.1.2)
+    english (0.6.3)
+      language
+    json (1.5.3)
+    language (0.6.0)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  curb
+  english
+  json
+  rspec
+  yadirect!

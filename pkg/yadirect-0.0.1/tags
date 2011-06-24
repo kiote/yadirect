@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Hashit	lib/hashit.rb	/^class Hashit$/;"	c
+Proxy	lib/campaign_stat_api.rb	/^  class Proxy$/;"	c	class:Yadirect
+Proxy	lib/keywords_api.rb	/^  class Proxy$/;"	c	class:Yadirect
+Proxy	lib/miscellaneous_api.rb	/^  class Proxy$/;"	c	class:Yadirect
+Proxy	lib/proxy.rb	/^  class Proxy$/;"	c	class:Yadirect
+Yadirect	lib/campaign_stat_api.rb	/^module Yadirect$/;"	m
+Yadirect	lib/keywords_api.rb	/^module Yadirect$/;"	m
+Yadirect	lib/miscellaneous_api.rb	/^module Yadirect$/;"	m
+Yadirect	lib/proxy.rb	/^module Yadirect$/;"	m
+Yadirect	lib/yadirect.rb	/^module Yadirect$/;"	m
+YadirectError	lib/yadirect_error.rb	/^class YadirectError < RuntimeError$/;"	c
+create_new_report	lib/campaign_stat_api.rb	/^    def create_new_report *args$/;"	f	class:Yadirect.Proxy
+get_keywords_suggestion	lib/keywords_api.rb	/^    def get_keywords_suggestion *args$/;"	f	class:Yadirect.Proxy
+initialize	lib/hashit.rb	/^  def initialize(hash)$/;"	f	class:Hashit
+initialize	lib/proxy.rb	/^    def initialize params$/;"	f	class:Yadirect.Proxy
+initialize	lib/yadirect_error.rb	/^  def initialize(error_detail, error_str, error_code)$/;"	f	class:YadirectError
+invoke	lib/proxy.rb	/^    def invoke method, args = {}$/;"	f	class:Yadirect.Proxy
+ping_api	lib/miscellaneous_api.rb	/^    def ping_api$/;"	f	class:Yadirect.Proxy
