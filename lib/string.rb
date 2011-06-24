@@ -8,7 +8,19 @@ class String
    "ogrn"=>"OGRN", 
    "phrase_id"=>"PhraseID",
    "campaign_id" => "CampaignID",
-   "campaign_ids" => "CampaignIDS"
+   "campaign_ids" => "CampaignIDS",
+   "banner_id" => "BannerID", 
+   "im_login" => "IMLogin",
+   "banner_ids" => "BannerIDS",
+   "ctr" => "CTR",
+   "low_ctr_warning" => "LowCTRWarning",
+   "low_ctr" => "LowCTR",
+   "context_low_ctr" => "ContextLowCTR",
+   "region_id" => "RegionID",
+   "parent_id" => "ParentID",
+   "rubric_id" => "RubricID",
+   "goal_id" => "GoalID",
+   "fio" => "FIO"
   }
 
   def to_camelcase

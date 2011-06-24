@@ -15,5 +15,4 @@ spec/hash_spec.rb
 spec/proxy_spec.rb
 spec/spec_helper.rb
 spec/string_spec.rb
-tags
 yadirect.gemspec
