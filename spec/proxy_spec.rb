@@ -1,16 +1,18 @@
 #encoding: utf-8
 require 'spec_helper'
 require 'yadirect'
-require 'json' 
+require 'json'
 
 describe Yadirect::Proxy do
 
-  before(:all) do 
-    cert_dir = '/tmp/yadirect/cert'
+  before(:all) do
+    cert_dir = '~/cert'
     cert_key = File.join(cert_dir, 'private.key')
     cacert = File.join(cert_dir, 'cacert.pem')
     cert = File.join(cert_dir, 'cert.crt')
     params  = {:cert_key => cert_key, :cacert => cacert, :cert => cert}
+
+    puts params.inspect
     @proxy = Yadirect::Proxy.new(params)
   end
 
