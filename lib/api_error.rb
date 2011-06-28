@@ -1,7 +1,7 @@
-module Yadirect 
+module Yadirect
   class ApiError < RuntimeError
-    attr :error_detail, :error_str, :error_code
-    
+    attr_reader :error_detail, :error_str, :error_code
+
     def initialize(hash)
       @error_detail = hash["error_detail"]
       @error_str = hash["error_str"]
