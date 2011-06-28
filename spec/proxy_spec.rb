@@ -6,7 +6,7 @@ require 'json'
 describe Yadirect::Proxy do
 
   before(:all) do
-    cert_dir = '~/cert'
+    cert_dir = '/home/sashich/cert'
     cert_key = File.join(cert_dir, 'private.key')
     cacert = File.join(cert_dir, 'cacert.pem')
     cert = File.join(cert_dir, 'cert.crt')

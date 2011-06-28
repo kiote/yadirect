@@ -16,11 +16,10 @@ module Yadirect
 
     def invoke method, args = {}
       json_object = {:method => method, :locale => @locale, :param => args}.to_json
-      puts json_object.to_s
       c = Curl::Easy.http_post(EP_YANDEX_DIRECT_V4, json_object) do |curl|
         curl.cacert = @params[:cacert]
-        curl.cert_key = @params[:cert_key]
         curl.certtype = "PEM"
+        curl.cert_key = @params[:cert_key]
         curl.cert = @params[:cert]
         curl.headers['Accept'] = 'application/json'
         curl.headers['Content-Type'] = 'application/json'
