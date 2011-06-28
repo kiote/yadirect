@@ -3,7 +3,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('yadirect', '0.0.1') do |p|
+Echoe.new('yadirect', '0.0.2') do |p|
   p.summary        = "A yandex.direct ruby wrapper"
   p.description    = "A simple yandex.direct ruby wrapper"
   p.url            = "http://github.com/sashich/yadirect"
