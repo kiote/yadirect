@@ -22,25 +22,26 @@ describe Yadirect::Proxy do
   end
 
   it "GetKeywordsSuggestion" do
-    suggestions = @proxy.get_keywords_suggestion(:keywords => ["недвижимость"])
+    suggestions = @proxy.get_keywords_suggestion :params=>{:keywords => ["недвижимость"]}
     suggestions.should_not be nil
     suggestions.empty?.should be false
   end
 
   it "GetCampaignsList" do
-    campaigns = @proxy.get_campaigns_list "domgeoru"
+    campaigns = @proxy.get_campaigns_list :params=>["domgeoru"]
     campaigns.should_not be nil
     campaigns.empty?.should be false
   end
 
   it "GetBanners" do
-    banners = @proxy.get_banners :campaign_ids=>[2929027]
+    banners = @proxy.get_banners :params=>{:campaign_ids=>["2929027"]}
     banners.should_not be nil
     banners.empty?.should be false
   end
 
   it "GetClientsUnits" do
-    logins_list = @proxy.get_clients_units "domgeoru"
+    logins_list = @proxy.get_clients_units :params=>["domgeoru"]
   end
+
 
 end
