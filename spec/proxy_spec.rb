@@ -39,7 +39,7 @@ describe Yadirect::Proxy do
     banners.empty?.should be false
   end
 
-  it "GetClientsList" do
+  it "GetClientsUnits" do
     logins_list = @proxy.get_clients_units "domgeoru"
   end
 

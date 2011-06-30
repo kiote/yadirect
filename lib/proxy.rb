@@ -42,13 +42,10 @@ module Yadirect
 
     def method_missing(name, *args, &block)
       ya_params = to_hash_params(*args)
-      puts "args #{ya_params}"
       object = invoke(name.to_s.to_camelcase, ya_params)
     end
 
     def to_hash_params *args
-
-      puts "args #{args}"
       return {} if args.empty?
       first_arg = args.first
       first_arg.is_a?(Hash) ? first_arg.camelize_keys : args
