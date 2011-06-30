@@ -10,7 +10,7 @@ describe Yadirect::Proxy do
     cert_key = File.join(cert_dir, 'private.key')
     cacert = File.join(cert_dir, 'cacert.pem')
     cert = File.join(cert_dir, 'cert.crt')
-    params  = {:cert_key => cert_key, :cacert => cacert, :cert => cert}
+    params  = {:cert_key => cert_key, :cacert => cacert, :cert => cert, :debug=>true}
 
     puts params.inspect
     @proxy = Yadirect::Proxy.new(params)
@@ -27,22 +27,10 @@ describe Yadirect::Proxy do
     suggestions.empty?.should be false
   end
 
-  it "GetRegions" do
-    regions = @proxy.get_regions
-    regions.should_not be nil
-    regions.empty?.should be false
-  end
-
   it "GetCampaignsList" do
-    campaigns = @proxy.get_campaigns_list "mr.sashich"
+    campaigns = @proxy.get_campaigns_list "domgeoru"
     campaigns.should_not be nil
     campaigns.empty?.should be false
-  end
-
-  it "GetWordstatReportList" do
-    list = @proxy.get_wordstat_report_list
-    list.should_not be nil
-    list.empty?.should be false
   end
 
   it "GetBanners" do
@@ -51,5 +39,8 @@ describe Yadirect::Proxy do
     banners.empty?.should be false
   end
 
+  it "GetClientsList" do
+    logins_list = @proxy.get_clients_units "domgeoru"
+  end
 
 end

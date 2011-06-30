@@ -28,7 +28,7 @@ class String
   end
 
   def to_underscore
-    underscore(self)
+    underscore_string(self)
   end
 
   def find_exeption_words
