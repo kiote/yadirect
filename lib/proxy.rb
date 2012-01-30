@@ -48,7 +48,8 @@ module Yadirect
     def to_hash_params *args
       return {} if args.empty?
       params = args.first[:params]
-      return params.is_a?(Hash) ? params.camelize_keys : params.flatten
+      return params.is_a?(Hash) ? params.camelize_keys : 
+        params.is_a?(Array) ? params.flatten : params
     end
 
   end
