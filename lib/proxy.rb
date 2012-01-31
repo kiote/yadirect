@@ -7,19 +7,27 @@ require 'string'
 
 module Yadirect
   class Proxy
-    EP_YANDEX_DIRECT_V4 = 'https://soap.direct.yandex.ru/json-api/v4/'
+    EP_YANDEX_DIRECT_V4 = {
+        :v4      => 'https://soap.direct.yandex.ru/json-api/v4/',
+        :v4_live => 'https://soap.direct.yandex.ru/live/v4/json/'
+    }
     attr_accessor :debug, :locale
 
-    def initialize params
+    def initialize params, version = :v4_live
       @params = params
       @locale = 'RU' || params[:locale]
       @debug = false || params[:debug]
+      @version = version
     end
 
     def invoke method, args = {}
       json_object = {:method => method, :locale => @locale, :param => args}.to_json
+      # из-за того, что яндекс не принимает закодированные UTF-строки, по крайней мере в CreateWordstatCollect
+      # приходится их раскодировать обратно
+      json_object.gsub!(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")}
+
       puts "yadirect input: #{json_object}" if @debug
-      c = Curl::Easy.http_post(EP_YANDEX_DIRECT_V4, json_object) do |curl|
+      c = Curl::Easy.http_post(EP_YANDEX_DIRECT_V4[@version], json_object) do |curl|
         curl.cacert = @params[:cacert]
         curl.certtype = "PEM"
         curl.cert_key = @params[:cert_key]
@@ -49,7 +57,7 @@ module Yadirect
       return {} if args.empty?
       params = args.first[:params]
       return params.is_a?(Hash) ? params.camelize_keys : 
-        params.is_a?(Array) ? params.flatten : params
+         params.is_a?(Array) ? params.flatten : params
     end
 
   end
