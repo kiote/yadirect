@@ -27,7 +27,7 @@ module Yadirect
       # приходится их раскодировать обратно
       json_object.gsub!(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")}
 
-      puts "yadirect input: #{json_object}" if @debug
+      #puts "yadirect input: #{json_object}" if @debug
       c = Curl::Easy.http_post(EP_YANDEX_DIRECT_V4[@version], json_object) do |curl|
         curl.cacert = @params[:cacert]
         curl.certtype = "PEM"
