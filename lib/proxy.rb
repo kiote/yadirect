@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'curb'
 require 'json'
 require 'hashit'
